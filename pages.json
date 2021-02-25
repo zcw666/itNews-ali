@@ -6,8 +6,9 @@
 		{
 			"path": "pages/tabBar/index/index",
 			"style": {
+				"transparentTitle": "always",
 				"navigationStyle": "custom", //取消默认导航栏
-				"navigationBarTitleText": "首页"
+				"navigationBarTitleText": ""
 			}
 		},
 		{
