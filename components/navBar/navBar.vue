@@ -21,9 +21,9 @@
 	export default {
 		data() {
 			return {
-				statusBarHeight: 20,
-				navBarHeight: 45,
-				windowWidth: 375
+				statusBarHeight: 40,
+				navBarHeight: 90,
+				windowWidth: 750
 			};
 		},
 		created() {
@@ -34,14 +34,16 @@
 			
 			const res = uni.getSystemInfoSync();
 			console.log('res',res)
-			this.statusBarHeight = res.statusBarHeight
+			this.statusBarHeight = res.statusBarHeight*2
 
 			// #ifndef  H5 || APP-PLUS || MP-ALIPAY
 			let menuButtonInfo = uni.getMenuButtonBoundingClientRect()
 			console.log(menuButtonInfo)
 			let paddingHeight = menuButtonInfo.top - res.statusBarHeight
-			this.navBarHeight = menuButtonInfo.height + paddingHeight*2
-			this.windowWidth = menuButtonInfo.left
+			this.navBarHeight = (menuButtonInfo.height + paddingHeight*2)*2
+			this.windowWidth = (menuButtonInfo.left)*2
+			console.log(this.windowWidth)
+			debugger
 			// #endif
 		}
 	}
@@ -63,16 +65,16 @@
 				display: flex;
 				align-items: center;
 				box-sizing: border-box;
-				padding: 0 10rpx;
+				padding: 0 20rpx;
 
 				// width: 100rpx;
 				.navbar-search {
 					width: 100%;
 					display: flex;
 					align-items: center;
-					height: 40rpx;
-					padding: 0 10rpx;
-					border-radius: 20rpx;
+					height: 80rpx;
+					padding: 0 20rpx;
+					border-radius: 40rpx;
 					background-color: #fff;
 				}
 
@@ -83,10 +85,10 @@
 
 				/* #endif */
 				.navbar-search-icon {
-					width: 10rpx;
-					height: 10rpx;
+					width: 20rpx;
+					height: 20rpx;
 					background-color: $mk-base-color;
-					border-radius: 20rpx;
+					border-radius: 40rpx;
 				}
 			}
 
