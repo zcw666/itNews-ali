@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import App from './App'
+import $api from './common/api/index.js'
 import uView from "uview-ui";
 Vue.use(uView);
+Vue.prototype.$api = $api
 
 Vue.config.productionTip = false
 

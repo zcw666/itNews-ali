@@ -43,12 +43,11 @@
 			this.navBarHeight = (menuButtonInfo.height + paddingHeight*2)*2
 			this.windowWidth = (menuButtonInfo.left)*2
 			console.log(this.windowWidth)
-			debugger
 			// #endif
 		}
 	}
 </script>
-
+ 
 <style lang="scss" scoped>
 	@import '../../common/css/iconfont.css';
 
@@ -66,8 +65,6 @@
 				align-items: center;
 				box-sizing: border-box;
 				padding: 0 20rpx;
-
-				// width: 100rpx;
 				.navbar-search {
 					width: 100%;
 					display: flex;

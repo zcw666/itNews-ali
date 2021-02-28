@@ -1,6 +1,7 @@
 <template>
 	<view class="index-page">
 		<navBar></navBar>
+		<tab></tab>
 		<u-button type="primary">主要按钮</u-button>
 		<view v-for="(item,index) in 100" :key="index">
 			{{item}}
@@ -12,18 +13,17 @@
 	export default {
 		data() {
 			return {
-				title: 'Hello'
+				title: 'Hello',
+				labelData: []
 			}
 		},
 		onLoad() {
 
-		},
-		methods: {
-
 		}
+
 	}
 </script>
 
 <style lang="scss" scoped>
-	
+
 </style>
