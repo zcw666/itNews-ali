@@ -36,7 +36,7 @@
 			console.log('res',res)
 			this.statusBarHeight = res.statusBarHeight*2
 
-			// #ifndef  H5 || APP-PLUS || MP-ALIPAY
+			// #ifdef  MP-WEIXIN
 			let menuButtonInfo = uni.getMenuButtonBoundingClientRect()
 			console.log(menuButtonInfo)
 			let paddingHeight = menuButtonInfo.top - res.statusBarHeight

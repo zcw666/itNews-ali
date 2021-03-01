@@ -2,7 +2,7 @@
 	<view class="tab">
 		<scroll-view scroll-x>
 			<view class="tab-scroll">
-				<view class="tab-item" v-for="(item,index) in tabArr">
+				<view :class="[{active:activeItem === index},'tab-item']"  v-for="(item,index) in tabArr" @click="clickTab(index,item)">
 					{{item.name}}
 				</view>
 			</view>
@@ -15,7 +15,8 @@
 	export default {
 		data() {
 			return {
-				tabArr: []
+				tabArr: [],
+				activeItem:0
 			};
 		},
 		mounted() {
@@ -28,7 +29,10 @@
 						this.tabArr = res.data
 					}
 				})
-
+			},
+			clickTab(num,data){
+				this.activeItem = num
+				this.$emit('choseTab',data)
 			}
 		}
 	}
@@ -57,8 +61,12 @@
 			color: #333;
 			font-weight: 500;
 		}
+		.active{
+			color: $mk-base-color;
+		}
 
 		.setting-icon {
+			padding: 0 10rpx;
 			border-left: 2rpx solid #dbdbdb;
 		}
 	}
