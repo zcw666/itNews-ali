@@ -3,7 +3,9 @@
 		<navBar></navBar>
 		<tab @choseTab="choseTab"></tab>
 		<list-scroll>
-			<list-card v-for="(item,index) in 5" :key="index"></list-card>
+			<list-card :model="'base'" ></list-card>
+			<list-card :model="'image'" ></list-card>
+			<list-card :model="'column'" ></list-card>
 			<!-- <view v-for="(item,index) in 100" :key="index">
 					{{item}}
 				</view> -->
